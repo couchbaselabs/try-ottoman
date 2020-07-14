@@ -1,0 +1,29 @@
+{
+  "name": "try-ottoman",
+  "version": "1.0.0",
+  "description": "The travel-sample API using the Ottoman Js v2",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "OTTOMAN_CONNECTION_STRING='couchbase://localhost:8091/travel-sample@admin:password' node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/couchbaselabs/try-ottoman.git"
+  },
+  "keywords": [
+    "OttomanJS",
+    "Couchbase"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/couchbaselabs/try-ottoman/issues"
+  },
+  "homepage": "https://github.com/couchbaselabs/try-ottoman#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ottoman": "^2.0.0-alpha.3",
+    "swagger-ui-express": "^4.1.4",
+    "yamljs": "^0.3.0"
+  }
+}
