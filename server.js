@@ -2,13 +2,10 @@ const express = require('express');
 const ottoman = require('ottoman');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
+require('./ottoman-global-config');
 const { HotelRoutes } = require('./src/hotels/hotels.controller');
 const { AirportRoutes } = require('./src/airports/airports.controller');
 const { FlightRoutes } = require('./src/flights/flights.controller');
-
-ottoman.globalConfig({
-  collectionKey: 'type'
-});
 
 const app = express();
 
