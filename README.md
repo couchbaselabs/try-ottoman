@@ -253,6 +253,7 @@ ottoman.ensureIndexes()
     const port = 4500;
     app.listen(port, () => {
       console.log(`API started at http://localhost:${port}`);
+      console.log(`API docs at http://localhost:${port}/api-docs/`);
     });
   })
   .catch((e) => console.log(e));
