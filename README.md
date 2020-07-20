@@ -263,4 +263,4 @@ ottoman.ensureIndexes()
 
 After running `yarn start`,  Once you have the example running, you can find all definitions in Swagger:
 
-```http://127.0.0.1:4500/api-docs```
+```http://localhost:4500/api-docs/```
