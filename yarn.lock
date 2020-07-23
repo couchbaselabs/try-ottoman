@@ -218,6 +218,11 @@ detect-libc@^1.0.3:
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
   integrity sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
 
+dotenv@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
+  integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
+
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -642,10 +647,10 @@ optionator@^0.8.1:
     type-check "~0.3.2"
     word-wrap "~1.2.3"
 
-ottoman@^2.0.0-alpha.3:
-  version "2.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/ottoman/-/ottoman-2.0.0-alpha.3.tgz#26a1f46ab7a35de6c61a7d1cb31d841c74ba85c3"
-  integrity sha512-kDGFw72WEBvvdj4fvU9i8nH+6u7LuDR2lvs7Wj5rag+bUR95RK4WVi/YyP4avBE54TxZfuPZSAQIGdmeeon1Pw==
+ottoman@^2.0.0-alpha.5:
+  version "2.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/ottoman/-/ottoman-2.0.0-alpha.5.tgz#09e13cf58c284beaf42a82ed4ed2e448c54814c1"
+  integrity sha512-vIb0c2BrfW7fs0JRK4ZUqXKejZCFUoBAKX4KbvsGPpNMZrS9mRWyQBVzgRcUuCIJCOhZAd21w+mJmcIu7hYGtQ==
   dependencies:
     couchbase "^3.0.4"
     jsonpath "^1.0.2"
