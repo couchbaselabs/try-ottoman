@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "start": "OTTOMAN_CONNECTION_STRING='couchbase://localhost:8091/travel-sample@admin:password' node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -21,8 +21,9 @@
   },
   "homepage": "https://github.com/couchbaselabs/try-ottoman#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "ottoman": "^2.0.0-alpha.3",
+    "ottoman": "^2.0.0-alpha.5",
     "swagger-ui-express": "^4.1.4",
     "yamljs": "^0.3.0"
   }
