@@ -34,7 +34,7 @@ const HotelSchema = new ottoman.Schema({
   description: String,
   directions: [String],
   email: String,
-  fax: String,
+  fax: { type: String, validator: 'phone' },
   free_breakfast: Boolean,
   free_internet: Boolean,
   free_parking: Boolean,

@@ -289,7 +289,6 @@ paths:
           description: "ID of the hotel to be returned"
           required: true
           type: "string"
-          format: "uuid"
       responses:
         "200":
           description: "Operation completed successfully"
@@ -492,9 +491,6 @@ definitions:
     - "city"
     - "country"
     properties:
-      id:
-        type: "string"
-        format: "uuid"
       airportname:
         type: "string"
         example: "Calais Dunkerque"
@@ -569,13 +565,15 @@ definitions:
         type: "string"
         example: "Part of the Marriott group, this non-smoking, four story hotel is just 2 blocks from Ghirardelli Square."
       directions:
-        type: "string"
-        example: "between Mason St and Taylor St"
+        type: "array"
+        items: 
+          type: "string"
+        example: ["between Mason St and Taylor St"]
       email:
         type: "string"
       fax:
         type: "string"
-        example: "+1 415 441-7307"
+        example: "415 441-7307"
       free_breakfast":
         type: "boolean"
         example: true
@@ -599,10 +597,10 @@ definitions:
         example: false
       phone:
         type: "string"
-        example: "+1 415 775-3800"
+        example: "415 775 3800"
       price:
-        type: "string"
-        example: "$210-$290"
+        type: "number"
+        example: 210
       public_likes:
         type: "array"
         items:
@@ -635,8 +633,8 @@ definitions:
     type: "object"
     properties:
       day:
-        type: "enum"
-        values: ["0", "1", "2", "3", "4", "5", "6"]
+        type: "number"
+        example: 1
       fligth:
         type: "string"
         example: "AF288"
