@@ -647,10 +647,10 @@ optionator@^0.8.1:
     type-check "~0.3.2"
     word-wrap "~1.2.3"
 
-ottoman@^2.0.0-alpha.5:
-  version "2.0.0-alpha.5"
-  resolved "https://registry.yarnpkg.com/ottoman/-/ottoman-2.0.0-alpha.5.tgz#09e13cf58c284beaf42a82ed4ed2e448c54814c1"
-  integrity sha512-vIb0c2BrfW7fs0JRK4ZUqXKejZCFUoBAKX4KbvsGPpNMZrS9mRWyQBVzgRcUuCIJCOhZAd21w+mJmcIu7hYGtQ==
+ottoman@^2.0.0-alpha.8:
+  version "2.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/ottoman/-/ottoman-2.0.0-alpha.8.tgz#762a59ff9a26d148f3bb919f9649f5a510851346"
+  integrity sha512-oUGvKXw7zV8dCPnRXZGOlvLfmZ4GAvhHkifezQosZ/L4uTJxw5gtcIPosoZkswsEEeH0eVLJXU/aT143UpOJfQ==
   dependencies:
     couchbase "^3.0.4"
     jsonpath "^1.0.2"

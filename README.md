@@ -247,7 +247,9 @@ app.use((err, req, res, next) => {
   return res.status(500).json({ error: err.toString() });
 });
 
-ottoman.ensureIndexes()
+const useCollections = false; // set this to true to create scopes/collections.
+
+ottoman.start({useCollections})
   .then(() => {
     console.log('All the indexes were registered');
     const port = 4500;
@@ -262,6 +264,6 @@ ottoman.ensureIndexes()
 
 #### Swagger Documentation
 
-After running `yarn start`,  Once you have the example running, you can find all definitions in Swagger:
+After running `yarn start`, Once you have the example running, you can find all definitions in Swagger:
 
 ```http://localhost:4500/api-docs/```
