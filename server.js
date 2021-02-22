@@ -22,7 +22,7 @@ app.use((err, req, res, next) => {
   return res.status(500).json({ error: err.toString() });
 });
 
-ottoman.ensureIndexes().then(() => {
+ottoman.start().then(() => {
     console.log('All the indexes were registered');
     const port = 4500;
     app.listen(port, () => {

@@ -4,7 +4,7 @@ This is a sample application for getting started with Ottoman using Couchbase Se
 
 ## Prepare Couchbase Server
 
-To use the API, one would need to have Couchbase Server running locally. [Setup Couchbase Server using docker](https://docs.couchbase.com/server/current/install/getting-started-docker.html).
+To use the API, one would need to have Couchbase Server running locally. [Setup Couchbase Server using docker](https://docs.couchbase.com/server/7.0/install/getting-started-docker.html).
 
 Follow instructions to Setup a new cluster and once the database is running, [install the required dataset](https://docs.couchbase.com/server/current/manage/manage-settings/install-sample-buckets.html#install-sample-buckets-with-the-ui): `travel-sample`.
 
@@ -86,8 +86,14 @@ class LinkType extends IOttomanType {
   constructor(name: string) {
     super(name, 'Link');
   }
-  cast(value: unknown) {
-    if (!isLink(String(value))) {
+  
+  cast(value) {
+    this.validate(value);
+      return String(value);
+  }
+    
+  validate(value, strict) {
+    if (value && !isLink(String(value))) {
       throw new ValidationError(`Field ${this.name} only allows a Link`);
     }
     return String(value);
@@ -247,7 +253,7 @@ app.use((err, req, res, next) => {
   return res.status(500).json({ error: err.toString() });
 });
 
-ottoman.ensureIndexes()
+ottoman.start()
   .then(() => {
     console.log('All the indexes were registered');
     const port = 4500;

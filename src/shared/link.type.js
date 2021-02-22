@@ -1,4 +1,4 @@
-const { IOttomanType, registerType } = require('ottoman');
+const { IOttomanType, registerType, ValidationError } = require('ottoman');
 
 /**
  * Custom type to manage the links
@@ -7,8 +7,14 @@ class LinkType extends IOttomanType {
   constructor(name) {
     super(name, 'Link');
   }
+
   cast(value) {
-    if (!isLink(String(value))) {
+    this.validate(value);
+    return String(value);
+  }
+
+  validate(value, strict) {
+    if (value && !isLink(String(value))) {
       throw new ValidationError(`Field ${this.name} only allows a Link`);
     }
     return String(value);
