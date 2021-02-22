@@ -1,10 +1,10 @@
-const ottoman = require('ottoman');
+const { Ottoman } = require('ottoman');
 const dotenv = require('dotenv');
 dotenv.config();
 
-ottoman.globalConfig({
-    collectionKey: 'type',
-    disableScopes: true
+const ottoman = new Ottoman({
+    modelKey: 'type',
+    collectionName: '_default'
 });
 
 ottoman.connect({
