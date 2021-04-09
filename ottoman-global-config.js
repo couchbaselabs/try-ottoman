@@ -1,15 +1,15 @@
-const ottoman = require('ottoman');
+const { Ottoman } = require('ottoman');
 const dotenv = require('dotenv');
 dotenv.config();
 
-ottoman.globalConfig({
-    collectionKey: 'type',
-    disableScopes: true
+const ottoman = new Ottoman({
+  modelKey: 'type',
+  collectionName: '_default'
 });
 
 ottoman.connect({
-    bucketName: 'travel-sample',
-    connectionString: 'couchbase://localhost:8091',
-    username: 'Administrator',
-    password: 'password'
+  bucketName: 'travel-sample',
+  connectionString: 'couchbase://localhost:8091',
+  username: 'Administrator',
+  password: 'password'
 });

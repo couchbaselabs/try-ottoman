@@ -24,32 +24,32 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   await makeResponse(res, () => {
     res.status(201);
-    const airport = new HotelModel(req.body);
-    return airport.save();
+    const hotel = new HotelModel(req.body);
+    return hotel.save();
   });
 });
 
 router.patch('/:id', async (req, res) => {
   await makeResponse(res, async () => {
     res.status(204);
-    await HotelModel.update(req.body, req.params.id);
+    await HotelModel.updateById(req.params.id, req.body);
   });
 });
 
 router.put('/:id', async (req, res) => {
   await makeResponse(res, async () => {
-    await HotelModel.replace(req.body, req.params.id);
+    await HotelModel.replaceById(req.params.id, req.body);
     res.status(204);
   });
 });
 
 router.delete('/:id', async (req, res) => {
   await makeResponse(res, async () => {
-    await HotelModel.remove(req.params.id);
+    await HotelModel.removeById(req.params.id);
     res.status(204);
   });
 });
 
-module.exports = { 
-    HotelRoutes: router
+module.exports = {
+  HotelRoutes: router
 }

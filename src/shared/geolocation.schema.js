@@ -8,5 +8,5 @@ const GeolocationSchema = new ottoman.Schema({
 });
 
 module.exports = {
-    GeolocationSchema
+  GeolocationSchema
 };

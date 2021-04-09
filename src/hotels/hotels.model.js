@@ -1,8 +1,8 @@
-const ottoman = require('ottoman');
+const { model, addValidators, Schema } = require('ottoman');  
 const { GeolocationSchema } = require('../shared/geolocation.schema');
 const { LinkType } = require('../shared/link.type');
 
-ottoman.addValidators({
+addValidators({
   phone: (value) => {
     const phone = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     if (value && !value.match(phone)) {
@@ -11,7 +11,7 @@ ottoman.addValidators({
   },
 });
 
-const ReviewSchema = new ottoman.Schema({
+const ReviewSchema = new Schema({
   author: String,
   content: String,
   date: Date,
@@ -24,7 +24,7 @@ const ReviewSchema = new ottoman.Schema({
   },
 });
 
-const HotelSchema = new ottoman.Schema({
+const HotelSchema = new Schema({
   address: { type: String, required: true },
   alias: String,
   checkin: String,
@@ -56,9 +56,8 @@ HotelSchema.index.findByName = { by: 'name' };
 HotelSchema.index.findByAlias = { by: 'alias', type: 'n1ql' };
 HotelSchema.index.findViewCountry = { by: 'email', type: 'view' };
 HotelSchema.index.findRefName = { by: 'name', type: 'refdoc' };
-const HotelModel = ottoman.model('hotel', HotelSchema);
-
+const HotelModel = model('hotel', HotelSchema);
 
 module.exports = {
-    HotelModel
+  HotelModel
 }

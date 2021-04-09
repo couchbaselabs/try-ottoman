@@ -16,5 +16,5 @@ AirportSchema.index.findByName = { by: 'name', type: 'n1ql' };
 const AirportModel = model('airport', AirportSchema);
 
 module.exports = {
-    AirportModel
+  AirportModel
 }

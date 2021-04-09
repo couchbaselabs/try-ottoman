@@ -34,32 +34,32 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   await makeResponse(res, () => {
     res.status(201);
-    const airport = new RouteModel(req.body);
-    return airport.save();
+    const route = new RouteModel(req.body);
+    return route.save();
   });
 });
 
 router.patch('/:id', async (req, res) => {
   await makeResponse(res, async () => {
     res.status(204);
-    await RouteModel.update(req.body, req.params.id);
+    await RouteModel.updateById(req.params.id, req.body);
   });
 });
 
 router.put('/:id', async (req, res) => {
   await makeResponse(res, async () => {
-    await AirportModel.replace(req.body, req.params.id);
+    await RouteModel.replaceById(req.params.id, req.body);
     res.status(204);
   });
 });
 
 router.delete('/:id', async (req, res) => {
   await makeResponse(res, async () => {
-    await RouteModel.remove(req.params.id);
+    await RouteModel.removeById(req.params.id);
     res.status(204);
   });
 });
 
-module.exports = { 
+module.exports = {
   FlightRoutes: router
 }

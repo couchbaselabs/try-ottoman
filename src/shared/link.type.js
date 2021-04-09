@@ -1,4 +1,4 @@
-const { IOttomanType, registerType } = require('ottoman');
+const { IOttomanType, registerType, ValidationError } = require('ottoman');
 
 /**
  * Custom type to manage the links
@@ -8,7 +8,12 @@ class LinkType extends IOttomanType {
     super(name, 'Link');
   }
   cast(value) {
-    if (!isLink(String(value))) {
+    this.validate(value);
+    return String(value);
+  }
+
+  validate(value, strict) {
+    if (value && !isLink(String(value))) {
       throw new ValidationError(`Field ${this.name} only allows a Link`);
     }
     return String(value);
@@ -30,7 +35,7 @@ registerType(LinkType.name, linkTypeFactory);
  * Check if value is a valid Link
  * @param value
  */
-function isLink(value) {
+ function isLink(value) {
   const regExp = new RegExp(
     /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi,
   );
@@ -38,5 +43,5 @@ function isLink(value) {
 };
 
 module.exports = {
-    LinkType
+  LinkType
 };

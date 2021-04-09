@@ -7,7 +7,7 @@ const router = express();
 
 router.get('/', async (req, res) => {
   await makeResponse(res, async () => {
-    const {limit, search, skip} = req.query;
+    const { limit, search, skip } = req.query;
     const options = new FindOptions({ limit: Number(limit || 50), skip: Number(skip || 0) });
     const filter = search ? { airportname: { $like: `%${search}%` } } : {};
     const result = await AirportModel.find(filter, options);
@@ -33,24 +33,24 @@ router.post('/', async (req, res) => {
 router.patch('/:id', async (req, res) => {
   await makeResponse(res, async () => {
     res.status(204);
-    await AirportModel.update(req.body, req.params.id);
+    await AirportModel.updateById(req.params.id, req.body);
   });
 });
 
 router.put('/:id', async (req, res) => {
   await makeResponse(res, async () => {
-    await AirportModel.replace(req.body, req.params.id);
+    await AirportModel.replaceById(req.params.id, req.body);
     res.status(204);
   });
 });
 
 router.delete('/:id', async (req, res) => {
   await makeResponse(res, async () => {
-    await AirportModel.remove(req.params.id);
+    await AirportModel.removeById(req.params.id);
     res.status(204);
   });
 });
 
-module.exports = { 
-    AirportRoutes: router
+module.exports = {
+  AirportRoutes: router
 }
