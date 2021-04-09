@@ -4,8 +4,8 @@ const { LinkType } = require('../shared/link.type');
 
 addValidators({
   phone: (value) => {
-    const phone = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    if (value && !value.match(phone)) {
+    const regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    if (value && !value.match(regex)) {
       throw new Error('Phone number is invalid.');
     }
   },

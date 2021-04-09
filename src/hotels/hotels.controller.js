@@ -5,9 +5,11 @@ const { FindOptions } = require('ottoman');
 const router = express();
 
 router.get('/', async (req, res) => {
-  console.log('entre');
   await makeResponse(res, async () => {
-    const options = new FindOptions({ limit: Number(req.query.limit || 50), skip: Number(req.query.skip || 0) });
+    const options = new FindOptions({
+      limit: Number(req.query.limit || 50), 
+      skip: Number(req.query.skip || 0)
+    });
     const filter = req.query.search ? { name: { $like: `%${req.query.search}%` } } : {};
     const result = await HotelModel.find(filter, options);
     const { rows: items } = result;

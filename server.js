@@ -29,5 +29,5 @@ ottoman.start().then(() => {
     console.log(`API started at http://localhost:${port}`);
     console.log(`API docs at http://localhost:${port}/api-docs/`);
   });
-})
-  .catch(e => console.log(e));
+}).catch(e => console.log(e));
+

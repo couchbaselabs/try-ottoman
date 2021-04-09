@@ -7,6 +7,7 @@ class LinkType extends IOttomanType {
   constructor(name) {
     super(name, 'Link');
   }
+
   cast(value) {
     this.validate(value);
     return String(value);
@@ -35,7 +36,7 @@ registerType(LinkType.name, linkTypeFactory);
  * Check if value is a valid Link
  * @param value
  */
- function isLink(value) {
+function isLink(value) {
   const regExp = new RegExp(
     /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi,
   );
