@@ -19,7 +19,7 @@ const RouteSchema = new Schema({
   type: String,
 });
 
-const RouteModel = model('route', RouteSchema);
+const RouteModel = model('route', RouteSchema, { keyGeneratorDelimiter: '_' });
 
 module.exports = {
   RouteModel
