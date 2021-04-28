@@ -203,7 +203,7 @@ paths:
         in: "query"
         required: false
         type: "number"
-      - name: "search"
+      - name: "name"
         in: "query"
         required: false
         type: "string"

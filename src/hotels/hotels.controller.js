@@ -8,9 +8,10 @@ router.get('/', async (req, res) => {
   await makeResponse(res, async () => {
     const options = new FindOptions({
       limit: Number(req.query.limit || 50), 
-      skip: Number(req.query.skip || 0)
+      skip: Number(req.query.skip || 0),
+      ignoreCase : true
     });
-    const filter = req.query.search ? { name: { $like: `%${req.query.search}%` } } : {};
+    const filter = req.query.name ? { name: { $like: `%${req.query.name}%`  }} : {};
     const result = await HotelModel.find(filter, options);
     const { rows: items } = result;
     return {
