@@ -4,13 +4,7 @@ dotenv.config();
 
 const ottoman = new Ottoman({
   modelKey: 'type',
-  collectionName: '_default',
-  keyGeneratorDelimiter: '_'
+  scopeName: 'inventory'
 });
 
-ottoman.connect({
-  bucketName: 'travel-sample',
-  connectionString: 'couchbase://localhost:8091',
-  username: 'Administrator',
-  password: 'password'
-});
+module.exports = { ottoman };
