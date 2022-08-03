@@ -1,3 +1,4 @@
+const process = require('process');
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
@@ -23,12 +24,7 @@ app.use((err, req, res, next) => {
 
 const main = async () => {
   try {
-    await ottoman.connect({
-      bucketName: 'travel-sample',
-      connectionString: 'couchbase://localhost:8091',
-      username: 'Administrator',
-      password: 'password',
-    });
+    await ottoman.connect(process.env.OTTOMAN_CONNECTION_STRING);
     await ottoman.start();
     const port = 4500;
     app.listen(port, () => {
